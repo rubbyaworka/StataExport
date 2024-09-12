@@ -1,0 +1,83 @@
+---
+title: "Documentation"
+output: html_document
+date: "2024-09-12"
+---
+
+
+## Steps INVOLVE in creating a Package
+
+
+1. next create a package project using the below code
+```{r}
+usethis::create_package(path = "C:/ETH/git/ETHdemo")
+```
+2. To create a new .R script inside the R/ directory of an R package project. use the code below
+```{r}
+usethis::use_r("StataExport")
+```
+
+3. create your function you want to use in StataExport.R file
+
+4. Test functionality, allows you to test if your function does as expected
+```{r}
+devtools::load_all()
+```
+>devtools::load_all()
+ℹ Loading StataExport
+
+5. Document function
+Go to “Code” and find “Insert Roxygen Skeleton”
+    a. automate the creation and updating of documentation for R packages. It uses Roxygen2 comments to generate .Rd (manual) files and update the NAMESPACE file in your package, ensuring that everything is properly documented and registered for use.
+```{r}
+devtools::document()
+```
+
+> devtools::document()
+ℹ Updating StataExport documentation
+ℹ Loading StataExport
+✖ StataExport.R:5: @param requires two parts: an argument name
+  and a description.
+✖ StataExport.R:6: @param requires two parts: an argument name
+  and a description.
+✖ StataExport.R:7: @param requires two parts: an argument name
+  and a description.
+✖ StataExport.R:10: @return requires a value.
+✖ StataExport.R:13: @examples requires a value.
+Writing NAMESPACE
+Writing export_dynamic_crosstab.Rd
+> 
+Try ?times2 and notice a new folder called man
+
+Try ?StataExport and notice a new folder called man
+> ?StataExport
+No documentation for ‘StataExport’ in specified packages and libraries:
+you could try ‘??StataExport’
+> 
+
+## Git and GitHub
+A few steps to go through
+
+Setup user
+
+```{r}
+usethis::use_git_config(user.name = "rubbyaworka", user.email = "aworka123@gmail.com")
+```
+
+## Setup GitHub credentials
+
+```{r}
+credentials::set_github_pat()
+```
+> credentials::set_github_pat()
+If prompted for GitHub credentials, enter your PAT in the password field
+Using GITHUB_PAT from Rubby Aworka (credential helper: manager)
+
+##Maybe you need to create a personal access token:
+```{r}
+usethis::create_github_token()
+```
+
+Use git: usethis::use_git()
+
+Get package to GitHub
