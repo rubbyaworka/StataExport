@@ -15,3 +15,5 @@ Imports:
     magrittr,
     sjlabelled,
     writexl
+URL: https://github.com/rubbyaworka/StataExport
+BugReports: https://github.com/rubbyaworka/StataExport/issues
